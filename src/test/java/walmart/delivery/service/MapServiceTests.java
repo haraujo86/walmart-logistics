@@ -2,7 +2,6 @@ package walmart.delivery.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class MapServiceTests {
 	public void testInsertMap() throws ServiceException, DAOException {
 		mockPersistMap();
 		Map map = mapService.insertMap(INSERT_JSON);
-		assertNull(map.getId());
+		assertNotNull(map.getId());
 	}
 	
 	@Test
@@ -60,7 +59,7 @@ public class MapServiceTests {
 	public void testCalculateShortestRoute() throws ServiceException {
 		mockMap();
 		String routeJson = mapService.calculateShortestRoute("MapTest1", "A", "D", 10D, 2.5D);
-		assertEquals(1, 2);
+		assertEquals(JSON, routeJson);
 	}
 	
 	private void mockMap() throws ServiceException {
