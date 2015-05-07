@@ -44,7 +44,7 @@ public class MapServiceTests {
 	public void testInsertMap() throws ServiceException, DAOException {
 		mockPersistMap();
 		Map map = mapService.insertMap(INSERT_JSON);
-		assertNotNull(map.getId());
+		assertNull(map.getId());
 	}
 	
 	@Test
@@ -59,7 +59,7 @@ public class MapServiceTests {
 	public void testCalculateShortestRoute() throws ServiceException {
 		mockMap();
 		String routeJson = mapService.calculateShortestRoute("MapTest1", "A", "D", 10D, 2.5D);
-		assertEquals(JSON, routeJson);
+		assertEquals(1, 2);
 	}
 	
 	private void mockMap() throws ServiceException {
